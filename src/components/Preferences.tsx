@@ -85,7 +85,7 @@ const Preferences: FC<Props> = ({ setStep }) => {
   }
 
   return (
-    <Card className="w-[500px]">
+    <Card className="w-full max-w-[500px]">
       <Progress value={100} />
       <CardHeader>
         <CardTitle>Registeration</CardTitle>

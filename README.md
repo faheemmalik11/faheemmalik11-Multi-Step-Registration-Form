@@ -38,13 +38,5 @@ Notification settings, Privacy settings - page for account preferences created.
 - Used Tailwind CSS for styling.  
 - Used Formik  for form validation where required.  
 - Used React context for sharing state across different components.  
-- Used React reducer library for updating component state.  
+- Used React reducer for managing component states.
 - Used axios for making http request and sending the registration data to a dummy end point.  
-
-
-
-
-
-
-
-

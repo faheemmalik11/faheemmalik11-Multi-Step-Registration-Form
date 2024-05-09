@@ -6,7 +6,7 @@ export default function Home() {
 
 
   return (
-    <div className="border w-full h-[100vh] flex justify-center items-center">
+    <div className="w-full md:h-[100vh] md:pt-0 pt-10 flex justify-center items-center px-5">
       <RegistrationInfoProvider>
               <LoginForm />
       </RegistrationInfoProvider>
