@@ -18,7 +18,7 @@ interface Props {
 
 const RegistrationCard: FC<Props> = ({cardHeader, cardFooter, cardBody, step}) => {
   return (
-    <Card className="w-[500px]">
+    <Card className="w-full">
     <CardHeader>
       {cardHeader}
     </CardHeader>

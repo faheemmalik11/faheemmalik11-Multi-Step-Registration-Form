@@ -89,8 +89,8 @@ const UserDetails: React.FC<Props> = ({ setStep }) => {
 
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Card className="w-[500px]">
+    <form className="w-full max-w-[500px] px-5" onSubmit={handleSubmit}>
+      <Card className="w-full">
         <Progress value={33} />
         <CardHeader>
           <CardTitle>Registeration</CardTitle>
@@ -98,13 +98,9 @@ const UserDetails: React.FC<Props> = ({ setStep }) => {
         </CardHeader>
 
         <CardContent>
-          <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <div className="flex items-center gap-3">
-                <Label htmlFor="name">Name</Label>
-                {errors.name ? <ErrorMessage message={errors.name} />: <></> }
-              </div>
-
+          <div className="grid w-full items-center gap-5">
+            <div className="flex flex-col gap-1.5">
+              <Label htmlFor="name">Name</Label>
               <Input
                 name="name"
                 onChange={handleNameChange}
@@ -113,13 +109,12 @@ const UserDetails: React.FC<Props> = ({ setStep }) => {
                 value={name}
                 className={`${errors.name ? "border-red-600 bg-red-50":""}`}
               />
-            </div>
-            <div className="flex flex-col space-y-1.5">
-            
-              <div className="flex items-center gap-3">
-              <Label htmlFor="email">Email</Label>
-                {errors.email ? <ErrorMessage message={errors.email} />: <></> }
+              <div className="h-4">
+                {errors.name ? <ErrorMessage message={errors.name} />: <></> }
               </div>
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <Label htmlFor="email">Email</Label>
               <Input
                 name="email"
                 id="email"
@@ -128,37 +123,39 @@ const UserDetails: React.FC<Props> = ({ setStep }) => {
                 onChange={handleEmailChange}
                 className={`${errors.email ? "border-red-600 bg-red-50":""}`}
               />
-            </div>
-            <div className="flex flex-col space-y-1.5">
-              <div className="flex items-center gap-3">
-              <Label htmlFor="password">Password</Label>
-                {errors.password ? <ErrorMessage message={errors.password} />: <></> }
+              <div className="h-4">
+                {errors.email ? <ErrorMessage message={errors.email} />: <></> }</div>
               </div>
+            <div className="flex flex-col gap-1.5">
+              <Label htmlFor="password">Password</Label>
               <Input
                 name="password"
                 id="password"
+                type="password"
                 placeholder="Create a password"
                 value={password}
                 onChange={handlePasswordChange}
                 className={`${errors.password ? "border-red-600 bg-red-50":""}`}
 
               />
-            </div>
-            <div className="flex flex-col space-y-1.5">
-              <div className="flex items-center gap-3">
-              <Label htmlFor="confirmPassword">Confirm Password</Label>
-                {errors.confirmPassword ? <ErrorMessage message={errors.confirmPassword} />: <></> }
+              <div className="h-4">
+                {errors.password ? <ErrorMessage message={errors.password} />: <></> }</div>
               </div>
+            <div className="flex flex-col gap-1.5">
+              <Label htmlFor="confirmPassword">Confirm Password</Label>
               <Input
                 name="confirmPassword"
                 id="confirmPassword"
+                type="password"
                 placeholder="Confirm password"
                 value={confirmPassword}
                 onChange={handleConfirmPasswordChange}
                 className={`${errors.confirmPassword ? "border-red-600 bg-red-50":""}`}
 
               />
-            </div>
+              <div className="h-4">
+                {errors.confirmPassword ? <ErrorMessage message={errors.confirmPassword} />: <></> }</div>
+              </div>
           </div>
         </CardContent>
 

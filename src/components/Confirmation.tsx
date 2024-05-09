@@ -35,7 +35,7 @@ const Confirmation: FC<Props> = ({setStep}) => {
       </CardHeader>
 
       <CardContent>
-        <div className="w-full flex justify-between">
+        <div className="w-full flex sm:flex-row flex-col justify-between gap-4">
           <Avatar className="w-[150px] h-[150px]">
             <AvatarImage src={profilePicture} />
             <AvatarFallback className="flex justify-center">
@@ -44,7 +44,7 @@ const Confirmation: FC<Props> = ({setStep}) => {
             </AvatarFallback>
           </Avatar>
 
-          <div className=" w-[70%] flex flex-col gap-3 border p-3 rounded-lg shadow-lg">
+          <div className="sm:w-[70%] flex flex-col gap-3 border p-3 rounded-lg shadow-lg">
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="name">Name</Label>
 

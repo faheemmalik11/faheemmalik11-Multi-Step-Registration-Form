@@ -56,7 +56,7 @@ const ProfileInformation: FC<Props> = ({ setStep }) => {
   };
 
   return (
-    <Card className="w-[500px]">
+    <Card className="w-full max-w-[500px]">
       <Progress value={66} />
       <CardHeader>
         <CardTitle>Registeration</CardTitle>
@@ -88,14 +88,7 @@ const ProfileInformation: FC<Props> = ({ setStep }) => {
             setPicError={setPicError}
           />
           <div className="grid w-full gap-1.5">
-            <div className="flex items-center gap-3">
-              <Label htmlFor="bio">Bio</Label>
-              {bioError ? (
-                <ErrorMessage message={"Please enter your bio"} />
-              ) : (
-                <></>
-              )}
-            </div>
+            <Label htmlFor="bio">Bio</Label>
             <Textarea
               name="bio"
               className="h-[200px]"
@@ -104,6 +97,13 @@ const ProfileInformation: FC<Props> = ({ setStep }) => {
               onChange={handleBioChange}
               value={bio}
             />
+            <div className="h-4">
+              {bioError ? (
+                  <ErrorMessage message={"Please enter your bio"} />
+                ) : (
+                  <></>
+                )}
+            </div>
           </div>
         </div>
       </CardContent>

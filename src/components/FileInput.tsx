@@ -42,28 +42,29 @@ const FileInput: FC<Props> = ({
   };
 
   return (
-    <div className="grid w-full max-w-full items-center gap-1.5">
-      <div className="flex items-center gap-3">
-        <Label htmlFor="profilePicture">Profile Picture</Label>
-        {picError ? (
-          <ErrorMessage message={"Please upload a profile picture"} />
-        ) : (
-          <></>
-        )}
-
-        {inValidFile && !picError ? (
-          <ErrorMessage message={"Only png, jpg or jpeg file"} />
-        ) : (
-          <></>
-        )}
-      </div>
+    <div className="w-full max-w-full flex flex-col gap-1.5">
+      <Label htmlFor="profilePicture">Profile Picture</Label>
       <Input
         name={name}
         accept=".jpg, .jpeg, .png"
         onChange={handleFileChange}
         id="profilePicture"
         type="file"
+        className="cursor-pointer"
       />
+      <div className="h-4">
+        {picError ? (
+            <ErrorMessage message={"Please upload a profile picture"} />
+          ) : (
+            <></>
+          )}
+
+          {inValidFile && !picError ? (
+            <ErrorMessage message={"Only png, jpg or jpeg file"} />
+          ) : (
+            <></>
+          )}
+      </div>
     </div>
   );
 };
